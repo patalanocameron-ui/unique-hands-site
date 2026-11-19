@@ -318,10 +318,23 @@ footer .logo{width:76px;height:76px}
   .form-card{padding:22px}
   .ft{grid-template-columns:1fr}
   .ba-info h3{font-size:1.6rem}
-  .proj{flex-wrap:nowrap;overflow-x:auto;margin:22px -22px 0;padding:0 22px 6px;scrollbar-width:none}
-  .proj::-webkit-scrollbar{display:none}
-  .proj button{flex:none}
-  .ba{border-radius:16px}
+  .ba-sec{padding:48px 0 44px}
+  .ba-sec .sec-head{margin-bottom:20px!important}
+  .ba-sec h2{font-size:1.75rem}
+  .ba-grid{gap:16px!important}
+  .ba{border-radius:14px}
+  .ba .knob{width:44px;height:44px;margin:-22px 0 0 -22px}
+  .ba .lb{top:10px;font-size:.65rem;padding:4px 8px}.ba .lb.b{left:10px}.ba .lb.a{right:10px}
+  .ba-count{font-size:.8rem}
+  .ba-info h3{font-size:1.2rem!important;margin:2px 0 4px!important}
+  .ba-info p{font-size:.88rem;line-height:1.45}
+  .proj{gap:6px;margin-top:14px}
+  .proj button{font-size:.76rem;padding:6px 10px;gap:4px}
+  .proj button .ms{font-size:15px}
+  .ba-nav{display:none}
+  .ba-info{display:flex;flex-direction:column}
+  .ba-info .proj{order:-1;margin:0 0 14px}
+  .ba-sec .kicker{display:none}
   .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--paper);border-top:2px solid var(--ink)}
   .mbar .btn{padding:13px;box-shadow:none}
 }
@@ -531,11 +544,11 @@ var P=[
  ['pool','Pool deck tile','Old coating replaced with travertine style tile around the pool.','pool','Pool tile']];
 var ba=document.getElementById('ba'),A=document.getElementById('baA'),B=document.getElementById('baB'),rng=ba.querySelector('input'),pj=document.getElementById('proj'),cur=0;
 P.forEach(function(p,i){var b=document.createElement('button');b.type='button';b.innerHTML='<span class="ms" aria-hidden="true">'+p[3]+'</span>'+p[4];b.setAttribute('aria-pressed',i==0);b.onclick=function(){show(i)};pj.appendChild(b)});
-function fitBA(){var w=A.naturalWidth,h=A.naturalHeight;if(!w)return;var maxH=Math.min(640,window.innerHeight*0.72),maxW=ba.parentElement.clientWidth;var H=Math.min(maxH,maxW*h/w);ba.style.height=H+'px';ba.style.width=(H*w/h)+'px'}
+function fitBA(){var w=A.naturalWidth,h=A.naturalHeight;if(!w)return;var maxH=window.innerWidth<=640?Math.min(330,window.innerHeight*0.38):Math.min(640,window.innerHeight*0.72),maxW=ba.parentElement.clientWidth;var H=Math.min(maxH,maxW*h/w);ba.style.height=H+'px';ba.style.width=(H*w/h)+'px'}
 A.addEventListener('load',fitBA);window.addEventListener('resize',fitBA);
 function show(i){cur=(i+P.length)%P.length;var p=P[cur];A.src='img/ba-'+p[0]+'-a.jpg';B.src='img/ba-'+p[0]+'-b.jpg';A.alt=p[1]+' after';B.alt=p[1]+' before';
 document.getElementById('baTitle').textContent=p[1];document.getElementById('baDesc').textContent=p[2];document.getElementById('baCount').textContent=String(cur+1).padStart(2,'0')+' / '+String(P.length).padStart(2,'0');
-[].forEach.call(pj.children,function(b,j){b.setAttribute('aria-pressed',j==cur)});rng.value=50;ba.style.setProperty('--p','50%');var c=pj.children[cur];if(pj.scrollWidth>pj.clientWidth)pj.scrollTo({left:c.offsetLeft-22,behavior:'smooth'})}
+[].forEach.call(pj.children,function(b,j){b.setAttribute('aria-pressed',j==cur)});rng.value=50;ba.style.setProperty('--p','50%')}
 rng.addEventListener('input',function(){ba.style.setProperty('--p',rng.value+'%')});
 document.getElementById('baPrev').onclick=function(){show(cur-1)};document.getElementById('baNext').onclick=function(){show(cur+1)};
 P.forEach(function(p){new Image().src='img/ba-'+p[0]+'-a.jpg';new Image().src='img/ba-'+p[0]+'-b.jpg'});
