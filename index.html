@@ -386,7 +386,7 @@ footer .logo{width:76px;height:76px}
 <div class="ba" id="ba"><img id="baA" src="img/ba-shower-a.jpg" alt=""><img class="bf" id="baB" src="img/ba-shower-b.jpg" alt=""><span class="lb b">Before</span><span class="lb a">After</span><span class="line"></span><span class="knob"><span class="ms" aria-hidden="true">code</span></span><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"></div>
 </div>
 <div class="ba-info">
-<div><span class="ba-count" id="baCount">01 / 08</span><h3 id="baTitle">Tub to tiled walk-in shower</h3><p id="baDesc">Pulled the old fiberglass tub surround and built a full tile walk-in with a pebble floor.</p></div>
+<div><span class="ba-count" id="baCount">01 / 09</span><h3 id="baTitle">Tub to tiled walk-in shower</h3><p id="baDesc">Pulled the old fiberglass tub surround and built a full tile walk-in with a pebble floor.</p></div>
 <div class="proj" id="proj" role="group" aria-label="Choose a project"></div>
 <div class="ba-nav"><button type="button" id="baPrev" aria-label="Previous project"><span class="ms">arrow_back</span></button><button type="button" id="baNext" aria-label="Next project"><span class="ms">arrow_forward</span></button></div>
 </div>
@@ -402,7 +402,7 @@ footer .logo{width:76px;height:76px}
 <article class="s"><img src="img/ba-floor-a.jpg" alt="New luxury vinyl plank flooring in a living room" loading="lazy" style="object-position:center 70%"><div class="b"><span class="ic"><span class="ms" aria-hidden="true">grid_view</span></span><h3>Flooring</h3><p>Carpet out, vinyl plank and tile in. Baseboards and trim to finish it off.</p></div></article>
 <article class="s"><img src="img/ba-accent-a.jpg" alt="Navy herringbone accent wall" loading="lazy"><div class="b"><span class="ic"><span class="ms" aria-hidden="true">format_paint</span></span><h3>Paint &amp; walls</h3><p>Interior and exterior paint, drywall patches, texture matching and accent walls.</p></div></article>
 <article class="s"><img src="img/deck.jpg" alt="New wood deck and stairs built around an above ground pool" loading="lazy"><div class="b"><span class="ic"><span class="ms" aria-hidden="true">deck</span></span><h3>Decks, fences &amp; pavers</h3><p>Pool decks, wood and vinyl fencing, travertine patios, pavers and concrete pads.</p></div></article>
-<article class="s"><img src="img/house.jpg" alt="Freshly pressure washed and painted Palm Coast home" loading="lazy"><div class="b"><span class="ic"><span class="ms" aria-hidden="true">water_drop</span></span><h3>Pressure washing</h3><p>Houses, driveways, lanais and pool decks brought back to bright.</p></div></article>
+<article class="s"><img src="img/pw-driveway.jpg" alt="Driveway half pressure washed, showing clean concrete next to dirty concrete" loading="lazy"><div class="b"><span class="ic"><span class="ms" aria-hidden="true">water_drop</span></span><h3>Pressure washing</h3><p>Houses, driveways, lanais and pool decks brought back to bright.</p></div></article>
 <article class="s"><img src="img/ba-garage-a.jpg" alt="Garage floor with flake epoxy coating" loading="lazy"><div class="b"><span class="ic"><span class="ms" aria-hidden="true">garage</span></span><h3>Epoxy floors</h3><p>Two-part epoxy with broadcast color flakes for garages that look like showrooms.</p></div></article>
 <article class="s"><img src="img/fan.jpg" alt="Newly installed ceiling fan" loading="lazy"><div class="b"><span class="ic"><span class="ms" aria-hidden="true">build</span></span><h3>Installs &amp; repairs</h3><p>Fans, lights, appliances, TVs, smart locks, grab bars, gutters and dryer vents.</p></div></article>
 <article class="s text"><span class="ms" aria-hidden="true" style="font-size:40px;margin-bottom:12px">thunderstorm</span><h3>Storm damage?</h3><p>When the big contractors are booked out for weeks, Rob gets soffits, roofs and leaks sealed up fast.</p><a class="btn btn-d" href="#quote" style="margin-top:18px">Call it in</a></article>
@@ -535,6 +535,7 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 /* before / after */
 var P=[
  ['shower','Tub to tiled walk-in shower','Pulled the old fiberglass tub surround and built a full tile walk-in with a pebble floor.','shower','Walk-in shower'],
+ ['paint','Exterior house paint','Faded gray stucco repainted in a warm tan with brick-red trim.','house','Exterior paint'],
  ['floor','Living room flooring','Bare subfloor to warm vinyl plank across the whole living area.','grid_view','Flooring'],
  ['accent','Herringbone accent wall','Carpet swapped for vinyl, then a navy herringbone wall to make the room.','format_paint','Accent wall'],
  ['garage','Epoxy garage floor','Cracked, stained concrete turned into a two-part flake epoxy floor.','garage','Garage epoxy'],
@@ -570,7 +571,7 @@ var st='<span class="stars">'+'<span class="ms fill">star</span>'.repeat(5)+'</s
 document.getElementById('revs').innerHTML=R.map(function(r){return '<article class="rv">'+st+'<p>"'+r[2]+'"</p><div class="who"><span class="av">'+r[0][0].toUpperCase()+'</span><span>'+r[0]+'<small>'+r[1]+' review</small></span></div></article>'}).join('');
 
 /* gallery */
-var G=[['ba-shower-a','Tub to tile walk-in shower'],['deck','Pool deck and stairs'],['bath-octopus','Coastal bathroom remodel'],['ba-accent-a','Herringbone accent wall'],['ba-garage-a','Epoxy garage floor'],['house','Exterior pressure wash'],
+var G=[['ba-shower-a','Tub to tile walk-in shower'],['deck','Pool deck and stairs'],['bath-octopus','Coastal bathroom remodel'],['ba-accent-a','Herringbone accent wall'],['ba-garage-a','Epoxy garage floor'],['house','Exterior paint'],['pw-driveway','Driveway pressure wash'],
 ['shower-glass','Custom tile shower'],['ba-floor-a','Vinyl plank flooring'],['ba-wainscot-a','Board and batten wall'],['fence','Privacy fence'],['ba-pool-a','Pool deck tile'],['grab-bars','Grab bars'],['tile-floor','Tile floor'],['gutter','Gutters'],['ba-rebuild-a','Shower rebuild'],['ba-vanity-a','Vanity and lighting'],['deck-2','Deck build'],['fan','Ceiling fan install'],['garage-shelves','Room build out'],['pw-rob','Siding pressure wash']];
 var gd=document.getElementById('gdlg'),gg=document.getElementById('ggrid'),gv=document.getElementById('gview'),gi=document.getElementById('gimg'),gc=document.getElementById('gcap'),gs=document.getElementById('gsub'),gb=document.getElementById('gback'),gx=0;
 document.getElementById('gcount').textContent='See all '+G.length+' photos';
