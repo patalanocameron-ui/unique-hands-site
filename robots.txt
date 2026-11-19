@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://patalanocameron-ui.github.io/unique-hands-site/sitemap.xml
